@@ -41,10 +41,10 @@ on Mac OSX: requires Xcode installed to build xmlstarlet from source
     sudo make
     sudo make install
     
-View INSDseq XML structure (optional) - helps in writing a stylesheet. 10313991.xml is one of the fetched files
+View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.xml is one of the fetched files
 
     xmlstarlet el 10313991.xml
 
-Parsing XML with a custom stylesheet, which is suprising simple. Output annotation as bed format.
+Parsing XML with a custom stylesheet, which is surprisingly simple to code. Output annotation as bed format.
 
     xsltproc --novalid insdseq2bed.xsl 10313991.xml
