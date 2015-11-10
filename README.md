@@ -27,8 +27,7 @@ install xmlstarlet on Ubuntu
     
     sudo apt-get install xmlstarlet
 
-on RedHat/CENTOS/Fedora
-    
+on RedHat/CentOS/Fedora
     yum install xmlstarlet
 
 on Mac OSX. Requires Xcode installed to build xmlstarlet from source
