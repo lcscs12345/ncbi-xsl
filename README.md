@@ -10,7 +10,7 @@ So here is the step-by-step solution, using viral refseq as an example. The key 
     #download viral refseq in INSDseq XML format using gi
     while read name; do
         efetch -db nucleotide -id $name -format gpc > $name.xml;
-    done > viral.1.1.genomic.gi 
+    done < viral.1.1.genomic.gi 
 
     #view xml structure - helps in writing a stylesheet
     #10313991.xml is one of the fetched file
