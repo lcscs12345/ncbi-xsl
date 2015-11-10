@@ -32,7 +32,7 @@ on RedHat/CentOS/Fedora:
     
     yum install xmlstarlet
 
-on Mac OSX: requires Xcode installed to build xmlstarlet from source
+on Mac OSX: requires Xcode installed to build XMLStarlet from source
     
     curl -O http://iweb.dl.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
     tar zxvf xmlstarlet-1.6.1.tar.gz
@@ -45,6 +45,6 @@ View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.x
 
     xmlstarlet el 10313991.xml
 
-Parsing XML with a custom stylesheet, which is surprisingly simple to code. Only 13 lines in insdseq2bed.xsl. Output annotation as bed format.
+Parsing XML with a custom stylesheet, which is surprisingly easy to code. Only 13 lines in insdseq2bed.xsl. Output annotation as bed format.
 
     xsltproc --novalid insdseq2bed.xsl 10313991.xml
