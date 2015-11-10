@@ -23,6 +23,7 @@ Download viral refseq in INSDseq XML format using a list of gi using efetch
     done < viral.1.1.genomic.gi 
 
 Install xmlstarlet (optional)
+
 on Ubuntu:
     
     sudo apt-get install xmlstarlet
