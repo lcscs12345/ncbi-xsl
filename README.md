@@ -19,10 +19,9 @@ So here is a step-by-step solution, using viral refseq as an example. The key th
         efetch -db nucleotide -id $name -format gpc > $name.xml;
     done < viral.1.1.genomic.gi 
 
-    #install xmlstarlet
-    #Ubuntu
+    #install xmlstarlet on Ubuntu
     sudo apt-get install xmlstarlet
-    #RedHat/CENTOS/Fedora
+    #on RedHat/CENTOS/Fedora
     yum install xmlstarlet
     
     #view xml structure - helps in writing a stylesheet
