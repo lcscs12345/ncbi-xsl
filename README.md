@@ -4,7 +4,7 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 
 So here is a step-by-step solution, using viral refseq as an example. The key thing is parsing INSDseq XML files instead of GenBank flat files.
 
-Retrieve gi from viral.1.1.genomic.fna
+Retrieve GI from viral.1.1.genomic.fna
 
     curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
     gunzip viral.1.1.genomic.fna.gz
@@ -16,13 +16,13 @@ Download Entrez Direct suite
     unzip edirect.zip
     export PATH=$PATH:~/ANY/DIR/edirect
     
-Download viral refseq in INSDseq XML format using a list of gi using efetch
+Download viral refseq in INSDseq XML format using a list of GI
 
     while read name; do
         efetch -db nucleotide -id $name -format gpc > $name.xml;
     done < viral.1.1.genomic.gi 
 
-Install xmlstarlet (optional)
+Install XMLStarlet (optional)
 
 on Ubuntu:
     
@@ -41,10 +41,10 @@ on Mac OSX: requires Xcode installed to build xmlstarlet from source
     sudo make
     sudo make install
     
-View xml structure (optional) - helps in writing a stylesheet. 10313991.xml is one of the fetched files
+View INSDseq XML structure (optional) - helps in writing a stylesheet. 10313991.xml is one of the fetched files
 
     xmlstarlet el 10313991.xml
 
-Parsing xml with a custom stylesheet, insdseq2bed.xsl. Output annotation as bed format
+Parsing XML with a custom stylesheet, which is suprising simple. Output annotation as bed format.
 
     xsltproc --novalid insdseq2bed.xsl 10313991.xml
