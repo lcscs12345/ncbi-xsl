@@ -45,6 +45,6 @@ View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.x
 
     xmlstarlet el 10313991.xml
 
-Parsing XML with a custom stylesheet, which is surprisingly simple to code. Output annotation as bed format.
+Parsing XML with a custom stylesheet, which is surprisingly simple to code. Only 13 lines in insdseq2bed.xsl. Output annotation as bed format.
 
     xsltproc --novalid insdseq2bed.xsl 10313991.xml
