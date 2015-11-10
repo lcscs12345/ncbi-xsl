@@ -9,11 +9,22 @@ So here is the step-by-step solution, using viral refseq as an example. The key 
     gunzip viral.1.1.genomic.fna.gz
     grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
 
-    #download viral refseq in INSDseq XML format using a list of gi
+    #download Entrez Direct suite
+    curl -O ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.zip
+    unzip edirect.zip
+    export PATH=$PATH:~/ANY/DIR/edirect
+    
+    #download viral refseq in INSDseq XML format using a list of gi using efetch
     while read name; do
         efetch -db nucleotide -id $name -format gpc > $name.xml;
     done < viral.1.1.genomic.gi 
 
+    #install xmlstarlet
+    #Ubuntu
+    sudo apt-get install xmlstarlet
+    #RedHat/CENTOS/Fedora
+    yum install xmlstarlet
+    
     #view xml structure - helps in writing a stylesheet
     #10313991.xml is one of the fetched files
     xmlstarlet el 10313991.xml
