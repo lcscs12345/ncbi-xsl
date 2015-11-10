@@ -5,15 +5,17 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 So here is the step-by-step solution, using viral refseq as an example. The key thing is parsing INSDseq XML files instead of GenBank flat files.
 
     #retrieve gi from viral.1.1.genomic.fna
+    curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
+    gunzip viral.1.1.genomic.fna.gz
     grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
 
-    #download viral refseq in INSDseq XML format using gi
+    #download viral refseq in INSDseq XML format using a list of gi
     while read name; do
         efetch -db nucleotide -id $name -format gpc > $name.xml;
     done < viral.1.1.genomic.gi 
 
     #view xml structure - helps in writing a stylesheet
-    #10313991.xml is one of the fetched file
+    #10313991.xml is one of the fetched files
     xmlstarlet el 10313991.xml
 
     #parsing xml with a custom stylesheet, insdseq2bed.xsl
