@@ -23,6 +23,13 @@ So here is a step-by-step solution, using viral refseq as an example. The key th
     sudo apt-get install xmlstarlet
     #on RedHat/CENTOS/Fedora
     yum install xmlstarlet
+    #on Mac OSX. Requires Xcode installed to build xmlstarlet from source
+    curl -O http://iweb.dl.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
+    tar zxvf xmlstarlet-1.6.1.tar.gz
+    cd xmlstarlet-1.6.1
+    sudo ./configure
+    sudo make
+    sudo make install
     
     #view xml structure - helps in writing a stylesheet
     #10313991.xml is one of the fetched files
