@@ -5,13 +5,13 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 So here is a step-by-step solution, using viral refseq as an example. The key thing is parsing INSDseq XML files instead of GenBank flat files.
 
 1. Retrieve gi from viral.1.1.genomic.fna
-    
+
     curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
     gunzip viral.1.1.genomic.fna.gz
     grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
 
 2. Download Entrez Direct suite
-    
+
     curl -O ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.zip
     unzip edirect.zip
     export PATH=$PATH:~/ANY/DIR/edirect
