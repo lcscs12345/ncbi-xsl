@@ -1,4 +1,4 @@
-#Flexible and Lossless Conversion of NCBI GenBank Records
+#Versatile and Lossless Conversion of NCBI GenBank Records
 
 I've tested a handful Perl and Python scripts to retrieve annotations from GenBank flat files (.gbk, .gbff or .seq). However, to obtain lossless conversion by parsing GenBank flat files is a dream. A better option is to download gff files from ftp://ftp.ncbi.nlm.nih.gov/genomes/. But the gff collection is incomplete and only available for some refseq. Also, some genome entries might be temporarily pulled off during curation.
 
@@ -45,6 +45,6 @@ View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.x
 
     xmlstarlet el 10313991.xml
 
-Parsing XML with a custom stylesheet, which is surprisingly easy to code. Only 13 lines of code in insdseq2bed.xsl for transforming a viral genome annotation as bed format.
+Parsing XML with a custom stylesheet, which is surprisingly easy to code.
 
     xsltproc --novalid insdseq2bed.xsl 10313991.xml
