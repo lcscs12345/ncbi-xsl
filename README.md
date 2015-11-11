@@ -1,6 +1,6 @@
 #Versatile and Lossless Conversion of NCBI GenBank Records
 
-I've tested a handful Perl and Python scripts to retrieve annotations from GenBank flat files (.gbk, .gbff or .seq). However, to archieve lossless conversion by parsing GenBank flat files is a dream. A better option is to download gff files from ftp://ftp.ncbi.nlm.nih.gov/genomes/. But the gff collection is only available for a subset of refseq. In addition, some entries might be outdated or temporarily pulled off during curation.
+I've tested a handful Perl and Python scripts to retrieve annotations from GenBank flat files (.gbk, .gbff or .seq). However, to achieve lossless conversion by parsing GenBank flat files is a dream. A better option is to download gff files from ftp://ftp.ncbi.nlm.nih.gov/genomes/. But the gff collection is only available for a subset of refseq. In addition, some entries might be outdated or temporarily pulled off during curation.
 
 So here is a step-by-step solution, using viral refseq as an example. The key thing is parsing INSDseq XML files instead of GenBank flat files.
 
