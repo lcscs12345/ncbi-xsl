@@ -4,47 +4,47 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 
 So here is a step-by-step solution, using viral refseq as an example. The key thing is parsing INSDseq XML files instead of GenBank flat files.
 
-Retrieve GI from viral.1.1.genomic.fna
+1. Retrieve GI from viral.1.1.genomic.fna
 
-    curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
-    gunzip viral.1.1.genomic.fna.gz
-    grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
+        curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
+        gunzip viral.1.1.genomic.fna.gz
+        grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
 
-Download Entrez Direct suite
+2. Download Entrez Direct suite
 
-    curl -O ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.zip
-    unzip edirect.zip
-    export PATH=$PATH:~/ANY/DIR/edirect
+        curl -O ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.zip
+        unzip edirect.zip
+        export PATH=$PATH:~/ANY/DIR/edirect
     
-Download viral refseq in INSDseq XML format using a list of GI
+3. Download viral refseq in INSDseq XML format using a list of GI
 
-    while read name; do
-        efetch -db nucleotide -id $name -format gpc > $name.xml;
-    done < viral.1.1.genomic.gi 
+        while read name; do
+            efetch -db nucleotide -id $name -format gpc > $name.xml;
+        done < viral.1.1.genomic.gi 
 
-Install XMLStarlet (optional)
+4. Install XMLStarlet (optional)
 
-on Ubuntu:
+    on Ubuntu:
     
-    sudo apt-get install xmlstarlet
+        sudo apt-get install xmlstarlet
 
-on RedHat/CentOS/Fedora:
+    on RedHat/CentOS/Fedora:
     
-    yum install xmlstarlet
+        yum install xmlstarlet
 
-on Mac OSX:
+    on Mac OSX:
     
-    curl -O http://iweb.dl.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
-    tar zxvf xmlstarlet-1.6.1.tar.gz
-    cd xmlstarlet-1.6.1
-    sudo ./configure
-    sudo make
-    sudo make install
+        curl -O http://iweb.dl.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
+        tar zxvf xmlstarlet-1.6.1.tar.gz
+        cd xmlstarlet-1.6.1
+        sudo ./configure
+        sudo make
+        sudo make install
     
-View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.xml is one of the fetched files
+5. View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.xml is one of the fetched files.
 
-    xmlstarlet el 10313991.xml
+        xmlstarlet el 10313991.xml
 
-Parsing XML with a custom stylesheet, which is surprisingly easy to code.
+6. Parsing XML with a custom stylesheet, which is surprisingly easy to code.
 
-    xsltproc --novalid insdseq2annotation.xsl 10313991.xml
+        xsltproc --novalid insdseq2annotation.xsl 10313991.xml
