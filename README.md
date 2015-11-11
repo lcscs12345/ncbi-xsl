@@ -32,7 +32,7 @@ on RedHat/CentOS/Fedora:
     
     yum install xmlstarlet
 
-on Mac OSX: requires Xcode installed to build XMLStarlet from source
+on Mac OSX:
     
     curl -O http://iweb.dl.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz
     tar zxvf xmlstarlet-1.6.1.tar.gz
