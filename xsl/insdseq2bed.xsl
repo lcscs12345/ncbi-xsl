@@ -4,7 +4,8 @@
 <xsl:template match="/">
         <xsl:for-each select="INSDSet/INSDSeq/INSDSeq_feature-table/INSDFeature">
                 <xsl:value-of select="concat(INSDFeature_intervals/INSDInterval/INSDInterval_accession, '&#x9;')"/>
-                <!--WARNING: some polyA_sites and misc_features are annotated with <INSDInterval_point> tag instead-->
+                <!--WARNING: polyA_sites and misc_features could be annotated with INSDInterval_point tag instead-->
+                <!--WARNING: some features belong to minus strand-->
                 <xsl:value-of select="concat(INSDFeature_intervals/INSDInterval/INSDInterval_from, '&#x9;')"/>
                 <xsl:value-of select="concat(INSDFeature_intervals/INSDInterval/INSDInterval_to, '&#x9;')"/>
                 <xsl:value-of select="concat(INSDFeature_key, '&#10;')"/>
