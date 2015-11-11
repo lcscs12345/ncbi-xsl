@@ -47,4 +47,4 @@ View INSDseq XML structure (optional) - helps in coding a stylesheet. 10313991.x
 
 Parsing XML with a custom stylesheet, which is surprisingly easy to code.
 
-    xsltproc --novalid insdseq2bed.xsl 10313991.xml
+    xsltproc --novalid insdseq2annotation.xsl 10313991.xml
