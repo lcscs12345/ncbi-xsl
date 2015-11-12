@@ -16,7 +16,9 @@ So here is a step-by-step solution, using viral refseq as an example. The key th
         unzip edirect.zip
         export PATH=$PATH:~/ANY/DIR/edirect
     
-3. Download viral refseq in INSDseq XML format using a list of GI. NCBI Website and Data Usage Policies and Disclaimers: Run retrieval scripts on weekends or between 9 pm and 5 am Eastern Time weekdays for any series of more than 100 requests.
+3. Download viral refseq in INSDseq XML format using a list of GI. 
+    
+    NCBI Website and Data Usage Policies and Disclaimers: Run retrieval scripts on weekends or between 9 pm and 5 am Eastern Time weekdays for any series of more than 100 requests.
 
         while read name; do
             efetch -db nucleotide -id $name -format gpc > $name.xml;
