@@ -8,7 +8,7 @@ So here is a step-by-step solution, using viral refseq as an example. The key th
 
         curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
         gunzip viral.1.1.genomic.fna.gz
-        grep ">" viral.1.1.genomic.fna | sed 's/|/\t/g' | awk '{print $2}' > viral.1.1.genomic.gi
+        grep ">" viral.1.1.genomic.fna | awk 'BEGIN {FS="|"} {print $2}' > viral.1.1.genomic.gi
 
 2. Download Entrez Direct suite
 
