@@ -2,8 +2,7 @@
 
 I've tested a handful Perl and Python scripts to retrieve annotations from GenBank flat files (.gbk, .gbff or .seq). However, accurate or lossless conversion by parsing GenBank flat files seems like a dream. A better option is to download gff files from ftp://ftp.ncbi.nlm.nih.gov/genomes/. But the gff collection is only available for a subset of refseq. In addition, some entries might be outdated or temporarily pulled off during curation.
 
-Here is an official solution: parsing ASN.1 files instead of flat files using annotwriter from NCBI C++ toolkit. However, there is no precompiled binary for the 131 MB binary.
-http://sourceforge.net/p/song/mailman/song-devel/thread/F7F0DD93-49BD-41B5-862C-2834B8F578A6@lbl.gov/
+Here is the official solution: parsing ASN.1 files instead of flat files using annotwriter from NCBI C++ toolkit. However, there is no precompiled binary for the 131 MB binary. See http://sourceforge.net/p/song/mailman/song-devel/thread/F7F0DD93-49BD-41B5-862C-2834B8F578A6@lbl.gov/
 
 Another solution is by parsing INSDseq XML files as described below, using viral refseq as an example.
 
