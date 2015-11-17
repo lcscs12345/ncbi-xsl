@@ -4,6 +4,31 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 
 Here is the official solution: parsing ASN.1 files instead of flat files using annotwriter from NCBI C++ toolkit. However, there is no precompiled binary for the 131 MB binary. See http://sourceforge.net/p/song/mailman/song-devel/thread/F7F0DD93-49BD-41B5-862C-2834B8F578A6@lbl.gov/
 
+1. Install NCBI C++ Toolkit. It may take longer than 2 hours to compile
+
+        curl -O ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools++/CURRENT/ncbi_cxx--12_0_0.tar.gz
+        tar zxvf ncbi_cxx--12_0_0.tar.gz
+        cd ncbi_cxx--12_0_0
+        ./configure --prefix=/ANY/DIR/ncbi_cxx--12_0_0
+        make
+        make install
+        cd /ANY/DIR/ncbi_cxx--12_0_0/bin
+        export PATH=$PATH:/ANY/DIR/ncbi_cxx--12_0_0/bin
+
+2. Download Entrez Direct suite
+
+        curl -O ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.zip
+        unzip edirect.zip
+        export PATH=$PATH:~/ANY/DIR/edirect
+
+3. Download an ASN.1 file
+
+        efetch -db nucleotide -id <gi> > > <gi.asn>
+
+4. Convert an ANS.1 file to gff3 file
+
+        annotwriter -i <gi.asn> -format gff3 -full-annots -o <gi.gff>
+
 Another solution is by parsing INSDseq XML files as described below, using viral refseq as an example.
 
 1. Retrieve GI from viral.1.1.genomic.fna
