@@ -23,13 +23,13 @@ Here is the official solution: parsing ASN.1 files instead of flat files using a
 
 3. Download an ASN.1 file
 
-        efetch -db nucleotide -id <gi> > > <gi.asn>
+        efetch -db nucleotide -id <gi> > <gi.asn>
 
-4. Convert an ANS.1 file to gff3 file
+4. Convert an ASN.1 file to gff3 file
 
         annotwriter -i <gi.asn> -format gff3 -full-annots -o <gi.gff>
 
-Another solution is by parsing INSDseq XML files as described below, using viral refseq as an example.
+Another solution which is highly versatile is by parsing INSDseq XML files as described below, using viral refseq as an example.
 
 1. Retrieve GI from viral.1.1.genomic.fna
 
