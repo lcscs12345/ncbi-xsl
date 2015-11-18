@@ -9,7 +9,7 @@ Here is the official solution: parsing ASN.1 files instead of flat files using a
         curl -O ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools++/CURRENT/ncbi_cxx--12_0_0.tar.gz
         tar zxvf ncbi_cxx--12_0_0.tar.gz
         cd ncbi_cxx--12_0_0
-        ./configure --with-flat-makefile
+        ./configure --with-flat-makefile --prefix=/ANY/DIR/ncbi_cxx--12_0_0
         make -f Makefile.flat annotwriter.exe
         make install
         export PATH=$PATH:/ANY/DIR/ncbi_cxx--12_0_0/bin
