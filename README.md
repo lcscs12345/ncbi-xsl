@@ -12,7 +12,6 @@ Here is the official solution: parsing ASN.1 files instead of flat files using a
         ./configure --prefix=/ANY/DIR/ncbi_cxx--12_0_0
         make
         make install
-        cd /ANY/DIR/ncbi_cxx--12_0_0/bin
         export PATH=$PATH:/ANY/DIR/ncbi_cxx--12_0_0/bin
 
 2. Download Entrez Direct suite
