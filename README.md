@@ -4,7 +4,7 @@ I've tested a handful Perl and Python scripts to retrieve annotations from GenBa
 
 Here is the official solution: parsing ASN.1 files instead of flat files using annotwriter from NCBI C++ toolkit. However, there is no precompiled binary for the 131 MB binary. See http://sourceforge.net/p/song/mailman/song-devel/thread/F7F0DD93-49BD-41B5-862C-2834B8F578A6@lbl.gov/
 
-1. Install NCBI C++ Toolkit. Warning: it is 21 GB and may take longer than 2 hours to compile.
+1. Install NCBI C++ Toolkit. Warning: the installation is 21 GB and may take longer than 2 hours.
 
         curl -O ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools++/CURRENT/ncbi_cxx--12_0_0.tar.gz
         tar zxvf ncbi_cxx--12_0_0.tar.gz
