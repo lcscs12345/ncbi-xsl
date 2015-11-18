@@ -30,7 +30,7 @@ Here is the official solution: parsing ASN.1 files instead of flat files using a
 
 Another solution which is highly versatile is by parsing INSDseq XML files as described below, using viral refseq as an example.
 
-1. Retrieve all GIs from viral.1.1.genomic.fna
+1. Retrieve all GI from viral.1.1.genomic.fna
 
         curl -O ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
         gunzip viral.1.1.genomic.fna.gz
