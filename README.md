@@ -49,6 +49,7 @@ Another solution which is highly versatile is by parsing INSDseq XML files as de
 
         while read name; do
             efetch -db nucleotide -id $name -format gpc > $name.xml;
+            sleep 1;
         done < viral.1.1.genomic.gi 
 
 4. Install XMLStarlet (optional)
